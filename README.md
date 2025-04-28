@@ -1,14 +1,8 @@
-# blooket-hack
+# Blooket Hacks
+Thank you glitz for the original blooket hacks.
 
-Hell i'm actually gliz who created the blooket hacks. I got the repo from the guy who was impersonating me. 
+The goal of these hacks are to be more hidden, optimized, and run quickly without being caught. (as it all runs in the background)
 
-**This repo will not be updated at all. If you have any questions join the discord server below I'll be answering them.**
+I am constantly updating this repositity to upgrade old bits of code.
 
-**discord server: https://discord.gg/Nj9Zs5VtFp**
-
-Proof thats it me: ![image](https://user-images.githubusercontent.com/108590774/177013795-80b0e338-fa58-4eba-837f-340bab0c4e9a.png)
-
-
-# Contact
-
-if you want to contact me just dm me on twitter https://twitter.com/glizuwu
+**Please do make Issues and Pull requests if you find issues**
