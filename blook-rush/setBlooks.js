@@ -1,18 +1,20 @@
+// Made by BuddyWinte
+// /bs
 javascript:(function() {
-  if (window.location.pathname !== "/play/rush") {
-    alert("You must be in a blook rush game mode to use this hack!");
-  } else {
-    const e = Object.values(document.querySelector("#app > div > div"))[1].children[1]._owner;
-    const blooks = prompt("How many blooks do you want?");
-    if (blooks && !isNaN(blooks)) {
-      e.stateNode.props.firebase.setVal({
-        id: e.stateNode.props.client.hostId,
-        path: "c/" + e.stateNode.props.client.name + "/bs",
-        val: Number(parseFloat(blooks))
-      });
-      alert("Blooks set!");
+    console.log("setBlook.js - Made by BuddyWinte");
+    if (window.location.pathname !== "/play/rush") {
+        console.log("FAIL!")
+        alert("You must be in a Blook Rush game to use this hack")
     } else {
-      alert("Invalid number of blooks!");
+        const obj = Object.values(document.querySelector("#app > div > div"))[1].children[1]._owner;
+        const p_b = prompt("How many blooks do you want?");
+        if (b_j && !isNaN(b_j)) {
+            obj.stateNode.props.firebase.setVal({
+                id: obj.stateNode.props.client.hostId,
+                path: "c/" + obj.stateNode.props.client.name + "/bs",
+                val: Number(parseFloat(p_b))
+            });
+            console.log("SUCCEED");
+        }
     }
-  }
-})();
+})
