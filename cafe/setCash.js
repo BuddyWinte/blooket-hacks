@@ -1,54 +1,33 @@
-(async () => {
-    let n = document.createElement('iframe');
-    document.body.append(n);
-    window.alert = n.contentWindow.alert.bind(window);
-    window.prompt = n.contentWindow.prompt.bind(window);
-    window.confirm = n.contentWindow.confirm.bind(window);
-    n.remove();
-            function reactHandler() {
-                return Object.values(document.querySelector('#app > div > div'))[1].children[1]._owner;
-            };
-
-            if (document.location.pathname != "/cafe") {
-                alert("You must be in a cafe game!");
-            } else {
-                reactHandler().stateNode.setState({ cafeCash: Number(parseFloat(prompt('How much cash would you like?'))) });
-
-
-                alert('Added cash!');
-            };
-})();
-
-
-function footer() {
-    let element = document.createElement('div');
-
-    element.style = `font-family: "Nunito", sans-serif; font-size: 14px; height: 65px; width: 175px; border: 4px solid rgb(15, 15, 15); background: rgb(240, 240, 240); position: absolute; top: 20x; left: 20px; border-radius: 10px; color: rgb(0, 0, 0); text-align: center;`;
-    element.innerHTML = `<p>Made by gliz <br> My <a style="color: #0000ff;" href="https://twitter.com/glizuwu" target="_blank">twitter</a></p>`;
-    document.body.appendChild(element);
-
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    element.onmousedown = ((e = window.event) => {
-        e.preventDefault();
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        document.onmouseup = (() => {
-            document.onmouseup = null;
-            document.onmousemove = null;
-        });
-        document.onmousemove = ((e) => {
-            e = e || window.event;
-            e.preventDefault();
-            pos1 = pos3 - e.clientX;
-            pos2 = pos4 - e.clientY;
-            pos3 = e.clientX;
-            pos4 = e.clientY;
-            let top = (element.offsetTop - pos2) > 0 ? (element.offsetTop - pos2) : 0;
-            let left = (element.offsetLeft - pos1) > 0 ? (element.offsetLeft - pos1) : 0;
-            element.style.top = top + "px";
-            element.style.left = left + "px";
-        });
-    });
-};
-
-footer();
+// Made by BuddyWinte
+// /sc
+javascript:(function() {
+    console.log("setCash.js - Made by BuddyWinte");
+    if (window.location.pathname !== "/cafe") {
+        console.log("FAIL!")
+        alert("You must be in a Cafe game to use this hack")
+    } else {
+        const obj = Object.values(document.querySelector("#app > div > div"))[1].children[1]._owner;
+        const p_b = prompt("How much cash would you like?");
+        if (b_j && !NaN(p_b)) {
+            obj.stateNode.setState({ cafeCash: Number(parseFloat(p_b))});
+            console.log("SUCCEED");
+        }
+    }
+})
+// Made by BuddyWinte
+javascript:(function() {
+    console.log("setBlook.js - Made by BuddyWinte");
+    if (window.location.pathname !== "/play/rush") {
+        console.log("FAIL!")
+        alert("You must be in a Blook Rush game to use this hack")
+    } else {
+        const obj = Object.values(document.querySelector("#app > div > div"))[1].children[1]._owner;
+        const p_b = prompt("How much cash would you like?");
+        p_b = p_b.replace(/[^\d]/g, ''); // remove invalid chars
+        if (b_j) {
+            obj.stateNode.state.foods.forEach(e => e.stock = 99999);
+            obj.stateNode.forceUpdate();
+            console.log("SUCCEED");
+        }
+    }
+})
